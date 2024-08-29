@@ -1,6 +1,8 @@
 package com.obsquare1.training;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -12,7 +14,7 @@ public class ExcelRead{
 	static FileInputStream fis;
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
-	public static String readStringData(int row,int column) throws Exception{
+	public static String readStringData(int row,int column) throws Exception {
 	fis =new FileInputStream("C:\\Users\\ATHIRA\\OneDrive\\Documents\\data.xlsx");
 	workbook= new XSSFWorkbook(fis);
 	sheet =workbook.getSheet("Sheet1");
@@ -20,7 +22,7 @@ public class ExcelRead{
 	XSSFCell c= r.getCell(column);
 	return c.getStringCellValue();
 	}
-	public static double readNumericData(int row,int column) throws Exception{
+	public static double readNumericData(int row,int column) throws Exception {
 		fis=new FileInputStream("C:\\Users\\ATHIRA\\OneDrive\\Documents\\data.xlsx");
 		workbook = new XSSFWorkbook(fis);
 		sheet=workbook.getSheet("Sheet1");
